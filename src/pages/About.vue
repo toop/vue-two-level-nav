@@ -4,3 +4,12 @@
     <p>Hi there!</p>
   </v-container>
 </template>
+
+
+<script>
+  export default {
+    mounted () {
+      this.$store.commit('setSubroutes', [])
+    },
+  }
+</script>

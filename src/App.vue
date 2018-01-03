@@ -10,6 +10,8 @@
 
 
 <script>
+  import { mapGetters } from 'vuex'
+
   import Drawer from './components/Drawer.vue'
   import Toolbar from './components/Toolbar.vue'
 
@@ -20,8 +22,11 @@
     data () {
       return {
         isDrawerActive: undefined,
-        subroutes: [],
       }
+    },
+
+    computed: {
+      ...mapGetters(['subroutes']),
     },
 
     methods: {
@@ -31,15 +36,6 @@
       onSubmenuItemClick ({ path }) {
         this.$router.push(path)
       },
-    },
-
-    mounted () {
-      // TODO: init this subroutes from Foo when navigated, otherwise load empty subroutes array
-      // Consider to use vuex
-      this.subroutes = [
-        { id: 0, text: 'Bar', path: '/foo/bar' },
-        { id: 1, text: 'Baz', path: '/foo/baz' },
-      ]
     },
   }
 </script>
