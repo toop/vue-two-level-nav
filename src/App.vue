@@ -33,9 +33,6 @@
       onDrawerToggle (isActive) {
         this.isDrawerActive = isActive
       },
-      onSubmenuItemClick ({ path }) {
-        this.$router.push(path)
-      },
     },
   }
 </script>
